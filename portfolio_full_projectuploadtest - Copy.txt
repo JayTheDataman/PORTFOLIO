@@ -1,0 +1,112 @@
+1st Step: Duplicate Dataset
+	Duplicating the file will prevent the original datasource from being altered beyond recovery. Also the original file will later be used to for data validation. As a second failsafe, I duplicate the original file in EXCEL and add the sufix, "_Original_File". e
+2nd Step: Lock First Row and Provide Contrasting Colors
+	This prevents the first row from being manipulated during sorting and formula use.
+View >Freze Panes >Freeze Top Row
+3rd Step: Locate Duplicate and Missing Data
+Before starting a project I want to know what information is duplicated or missing from my dataset(s). This prevents miscalculated end results during the visualization phase.aff
+
+Locating Null/empty datacells/
+Via Excel I create a pivot table and search for any blanks/nulls.
+Insert >PivotTable>select entire EXCEL *Select New Worksheet to create a new tab for the pivot table* >*click* OK
+## --Insert image of create pivot table.
+ 
+Pivot Table
+With this new tab created, I am able to use the PivotTable Fields to quickly change the data presented within the pivot table. I do this by draging and dropping the column names into or by clicking the square next to each column name within the PivotTable Fields. Then drag the column name again, but this time into Values.
+ 
+This creates a new visualization within the pivot table which has two columns. A Column named 'show_id' and 'Count of show_id' has appeared. This new chart represents how many times each individual show_id is present within our main sheet under the column by the same name. 
+	This is an effective way to check for duplicate entries manually and how many NULLS are present as shown below.
+ 
+Sorting Pivot Tables
+To sort the pivot table in descending order you click the down arrow next to show_id within the pivot table as shown below.
+ 
+
+Then click "Sort By Value..." and in the new pop up window you make sure you select the "Largest to Smallest" option and click ok.
+ 
+
+Before Sorting:
+ 	
+After Sorting:
+ 
+
+It seems theres no duplicates within this column. 
+
+Alternate Duplicate Removal Tool
+	Alternately we could use the inhouse excel duplicate cleaning tool. This automated option is under Data >Data Tools >Remove Duplicates
+ 
+
+Clicking Remove Duplicates provides us with another window with more filtering options to selectivly remove duplcates from multiple columns, the currently selected column, and to change the names of the header to the letter or your own header (whatever name is located within the first row of each column). 
+Remove Duplicates popup window:
+ 
+Show only column letters:
+ 
+After clicking OK, a new pop up appears. This popup shows how many duplicates we removed with their respective row and how many rows are remaining. 
+	As an example I removed all the duplicates in the "type" column:
+ 
+8805 duplicates were found and deleted which leaves me with 2 rows. 
+Pivot Table: Finding and Manually Cleaning Duplicates
+	Searching through the rest of the columns for duplicates you would come across duplicates in the title column.
+Title Column
+ 
+
+We have 8 titles with duplicate appearences. DON'T PANIC! Lets go back to our Netflix_Edited_File and filter out each individual title so only they appear.
+
+Filtering Columns
+On the Netflix_Edited_File tab, you can click on the C column to highlight the entire thing and then click Data tab >Filter, then finally click the arrow that appears in cell C1:
+ 
+
+ This brings up a filter pop up where we will enter the name of the title we want to have displayed. Type the title in the search field. Then click Apply to see the changes reflect onto the sheet.
+
+ 
+
+
+ 
+
+Now we can see the two rows that share the same title. 
+Correcting Missing Data
+
+These two titles share the same release data, amount of seasons, and descriptions. Its aparent one of the two is missing  2 actors that the other entry has. I copied over the actors so the two entries mirror eachother. 
+	There wil be duplicate entries with matching names due to reasons like, multiple seasons, canceled or returning content (after being removed and brought back to the platform, which is what we see here with this title).
+	I also added an additional column to add clarity incase a team member were to find this situation. This column is called Dup_Notes.
+    
+Once done, return the sheet to its former apperence by clicking the drop arrow again and clicking "Clear Filter from Title
+ 
+
+
+Pivot Table Cleaning (Continued)
+Return to the pivot table to clean the rest of the columns via the same technique just used.
+ 
+Duplicates Manually Cleaned /Labled 
+Show_id and title
+Erased show_id and titles
+s5965, 2/9/2022
+s5966, 22-Jul
+s5967, August 15th
+S6530, Consequences
+
+Duplicates kept
+Death Note 
+s5319
+s5752
+Love In A Puff
+s160
+s7346
+Sin Senos si hay paraiso
+s1271
+s8023
+Inuyasha: The Movie 2: The Castle Beyond The Looking Glass
+S52
+S7091
+
+Assign New Show_ID
+Now that we have removed all duplicates, we need to reassign new show_id's for each film. But before that, we need to make a duplicate of our Netflix_Edited_File (incase an error is made assigning new show_ids). 
+ 
+Renamed new duplicate tab as, Netflix_Edited_New_Show_ID_File by right clicking the click Rename, or double left click on the tab to rename.
+
+TEST_NEWSHOWID
+edited
+6128 movies
+2675 tv shows
+
+
+ 
