@@ -10,7 +10,7 @@ Locating Null/empty datacells/
 Via Excel I create a pivot table and search for any blanks/nulls.
 Insert >PivotTable>select entire EXCEL *Select New Worksheet to create a new tab for the pivot table* >*click* OK
 ## --Insert image of create pivot table.
- 
+ g
 Pivot Table
 With this new tab created, I am able to use the PivotTable Fields to quickly change the data presented within the pivot table. I do this by draging and dropping the column names into or by clicking the square next to each column name within the PivotTable Fields. Then drag the column name again, but this time into Values.
  
